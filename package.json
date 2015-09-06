@@ -18,6 +18,7 @@
     },
     "homepage": "https://github.com/Fortune-Transportation/fortune-front-end#readme",
     "devDependencies": {
+        "jade": "^1.11.0",
         "jasmine-core": "^2.3.4",
         "karma": "^0.13.9",
         "karma-chrome-launcher": "^0.2.0",
@@ -30,6 +31,7 @@
         "update_webdriver": "node node_modules/protractor/bin/webdriver-manager update",
         "unit_tests": "node node_modules/karma/bin/karma start",
         "e2e_tests": "node node_modules/protractor/bin/protractor",
-        "tests": "npm run unit_tests && npm run e2e_tests"
+        "tests": "npm run unit_tests && npm run e2e_tests",
+        "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html"
     }
 }

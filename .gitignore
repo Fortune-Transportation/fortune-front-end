@@ -2,3 +2,5 @@
 node_modules
 app/vendor
 
+# Temporary Directory
+tmp
