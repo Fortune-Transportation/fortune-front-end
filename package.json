@@ -22,10 +22,14 @@
         "karma": "^0.13.9",
         "karma-chrome-launcher": "^0.2.0",
         "karma-firefox-launcher": "^0.1.6",
-        "karma-jasmine": "^0.3.6"
+        "karma-jasmine": "^0.3.6",
+        "protractor": "^2.2.0"
     },
     "config": {},
     "scripts": {
-        "unit_tests": "karma start"
+        "update_webdriver": "node node_modules/protractor/bin/webdriver-manager update",
+        "unit_tests": "node node_modules/karma/bin/karma start",
+        "e2e_tests": "node node_modules/protractor/bin/protractor",
+        "tests": "npm run unit_tests && npm run e2e_tests"
     }
 }
