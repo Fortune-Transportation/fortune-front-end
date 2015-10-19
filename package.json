@@ -32,7 +32,7 @@
         "update_webdriver": "node node_modules/protractor/bin/webdriver-manager update",
         "unit_tests": "node node_modules/karma/bin/karma start",
         "e2e_tests": "node node_modules/protractor/bin/protractor",
-        "tests": "npm run unit_tests && npm run e2e_tests",
+        "test": "npm run unit_tests && npm run e2e_tests",
         "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
         "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html"
     }
