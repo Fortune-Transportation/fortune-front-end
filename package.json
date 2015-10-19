@@ -5,7 +5,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Fortune-Transportation/fortune-front-end.git"
-    },
+        },
     "keywords": [
         "Fortune",
         "Transportation",
@@ -18,10 +18,11 @@
     },
     "homepage": "https://github.com/Fortune-Transportation/fortune-front-end#readme",
     "devDependencies": {
+        "eslint": "^1.7.1",
         "jade": "^1.11.0",
-          "jasmine-core": "^2.3.4",
-          "karma": "^0.13.9",
-          "karma-chrome-launcher": "^0.2.0",
+        "jasmine-core": "^2.3.4",
+        "karma": "^0.13.9",
+        "karma-chrome-launcher": "^0.2.0",
         "karma-firefox-launcher": "^0.1.6",
         "karma-jasmine": "^0.3.6",
         "ng-templatecache-convert": "^1.0.0",
@@ -34,6 +35,7 @@
         "e2e_tests": "node node_modules/protractor/bin/protractor",
         "test": "npm run unit_tests && npm run e2e_tests",
         "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
-        "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html"
+        "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
+        "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js"
     }
 }
