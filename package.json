@@ -42,7 +42,6 @@
     "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
     "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
     "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js",
-    "concat_js": "node node_modules/concat-cli/index.js -f app/*.js -o tmp/app.js",
-    "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js"
+    "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js"
   }
 }
