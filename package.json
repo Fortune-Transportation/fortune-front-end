@@ -21,6 +21,7 @@
     "checksum": "^0.1.1",
     "concat-cli": "^1.0.1",
     "eslint": "^1.7.1",
+    "front-end-dependency-inject": "^1.0.4",
     "fs-promise": "^0.3.1",
     "globby": "^3.0.1",
     "jade": "^1.11.0",
@@ -44,6 +45,7 @@
     "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
     "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js",
     "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js",
-    "checksum_js": "node scripts/checksum.js tmp/app.min.js"
+    "checksum_js": "node scripts/checksum.js tmp/app.min.js",
+    "inject_js": "node node_modules/front-end-dependency-inject/index.js js tmp/html/index.html tmp/html/index.html tmp *.min.js"
   }
 }
