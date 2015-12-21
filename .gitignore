@@ -4,3 +4,6 @@ app/vendor
 
 # Temporary Directory
 tmp
+
+# NPM Debug
+npm-debug.log
