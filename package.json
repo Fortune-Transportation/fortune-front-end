@@ -55,6 +55,7 @@
     "lint_sass": "node node_modules/sass-lint/bin/sass-lint.js app/*.scss",
     "compile_sass": "node node_modules/node-sass/bin/node-sass app/ -o tmp/css",
     "autoprefix": "node node_modules/postcss-cli/index.js --use autoprefixer tmp/css/*.css -d tmp/css",
-    "uglify_css": "node scripts/uglify-css.js tmp/app.min.css tmp/css/*.css "
+    "uglify_css": "node scripts/uglify-css.js tmp/app.min.css tmp/css/*.css ",
+    "checksum_css": "node scripts/checksum.js tmp/app.min.css"
   }
 }
