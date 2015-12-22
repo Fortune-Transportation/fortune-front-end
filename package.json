@@ -37,7 +37,8 @@
     "protractor": "^2.2.0",
     "q": "^1.4.1",
     "sass-lint": "^1.4.0",
-    "uglify-js": "^2.5.0"
+    "uglify-js": "^2.5.0",
+    "uglifycss": "0.0.19"
   },
   "config": {},
   "scripts": {
@@ -48,11 +49,12 @@
     "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
     "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
     "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js",
-    "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js",
+    "uglify_js": "node scripts/uglify-js.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js",
     "checksum_js": "node scripts/checksum.js tmp/app.min.js",
     "inject_js": "node node_modules/front-end-dependency-inject/index.js js tmp/html/index.html tmp/html/index.html tmp *.min.js",
     "lint_sass": "node node_modules/sass-lint/bin/sass-lint.js app/*.scss",
     "compile_sass": "node node_modules/node-sass/bin/node-sass app/ -o tmp/css",
-    "autoprefix": "node node_modules/postcss-cli/index.js --use autoprefixer tmp/css/*.css -d tmp/css"
+    "autoprefix": "node node_modules/postcss-cli/index.js --use autoprefixer tmp/css/*.css -d tmp/css",
+    "uglify_css": "node scripts/uglify-css.js tmp/app.min.css tmp/css/*.css "
   }
 }
