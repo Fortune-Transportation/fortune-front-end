@@ -1,53 +1,58 @@
 {
-    "name": "fortune-front-end",
-    "version": "0.0.0",
-    "description": "Fortune Front-end",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Fortune-Transportation/fortune-front-end.git"
-    },
-    "keywords": [
-        "Fortune",
-        "Transportation",
-        "front-end"
-    ],
-    "author": "Fortune Transportation",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Fortune-Transportation/fortune-front-end/issues"
-    },
-    "homepage": "https://github.com/Fortune-Transportation/fortune-front-end#readme",
-    "devDependencies": {
-        "checksum": "^0.1.1",
-        "concat-cli": "^1.0.1",
-        "eslint": "^1.7.1",
-        "front-end-dependency-inject": "^1.0.4",
-        "fs-promise": "^0.3.1",
-        "globby": "^3.0.1",
-        "jade": "^1.11.0",
-        "jasmine-core": "^2.3.4",
-        "karma": "^0.13.9",
-        "karma-chrome-launcher": "^0.2.0",
-        "karma-firefox-launcher": "^0.1.6",
-        "karma-jasmine": "^0.3.6",
-        "ng-templatecache-convert": "^1.0.0",
-        "node-sass": "^3.4.2",
-        "protractor": "^2.2.0",
-        "q": "^1.4.1",
-        "uglify-js": "^2.5.0"
-    },
-    "config": {},
-    "scripts": {
-        "update_webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-        "unit_tests": "node node_modules/karma/bin/karma start",
-        "e2e_tests": "node node_modules/protractor/bin/protractor",
-        "test": "npm run unit_tests && npm run e2e_tests",
-        "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
-        "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
-        "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js",
-        "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js",
-        "checksum_js": "node scripts/checksum.js tmp/app.min.js",
-        "inject_js": "node node_modules/front-end-dependency-inject/index.js js tmp/html/index.html tmp/html/index.html tmp *.min.js",
-        "compile_sass": "node node_modules/node-sass/bin/node-sass app/ -o tmp/css"
-    }
+  "name": "fortune-front-end",
+  "version": "0.0.0",
+  "description": "Fortune Front-end",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fortune-Transportation/fortune-front-end.git"
+  },
+  "keywords": [
+    "Fortune",
+    "Transportation",
+    "front-end"
+  ],
+  "author": "Fortune Transportation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fortune-Transportation/fortune-front-end/issues"
+  },
+  "homepage": "https://github.com/Fortune-Transportation/fortune-front-end#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.2.1",
+    "checksum": "^0.1.1",
+    "concat-cli": "^1.0.1",
+    "eslint": "^1.7.1",
+    "front-end-dependency-inject": "^1.0.4",
+    "fs-promise": "^0.3.1",
+    "globby": "^3.0.1",
+    "jade": "^1.11.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.6",
+    "ng-templatecache-convert": "^1.0.0",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.3.2",
+    "protractor": "^2.2.0",
+    "q": "^1.4.1",
+    "sass-lint": "^1.4.0",
+    "uglify-js": "^2.5.0"
+  },
+  "config": {},
+  "scripts": {
+    "update_webdriver": "node node_modules/protractor/bin/webdriver-manager update",
+    "unit_tests": "node node_modules/karma/bin/karma start",
+    "e2e_tests": "node node_modules/protractor/bin/protractor",
+    "test": "npm run unit_tests && npm run e2e_tests",
+    "compile_jade": "node node_modules/jade/bin/jade app index.jade --out tmp/html",
+    "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd tmp/ngTemplates.js tmp/html/*.html !tmp/html/index.html",
+    "lint_js": "node node_modules/eslint/bin/eslint.js app/*.js",
+    "uglify_js": "node scripts/uglify.js tmp/app.min.js app/**/*.js !app/**/*.spec.js tmp/ngTemplates.js",
+    "checksum_js": "node scripts/checksum.js tmp/app.min.js",
+    "inject_js": "node node_modules/front-end-dependency-inject/index.js js tmp/html/index.html tmp/html/index.html tmp *.min.js",
+    "lint_sass": "node node_modules/sass-lint/bin/sass-lint.js app/*.scss",
+    "compile_sass": "node node_modules/node-sass/bin/node-sass app/ -o tmp/css",
+    "autoprefix": "node node_modules/postcss-cli/index.js --use autoprefixer tmp/css/*.css -d tmp/css"
+  }
 }
