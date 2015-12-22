@@ -1,18 +1,13 @@
 {
   "name": "fortune-front-end",
   "version": "0.0.0",
-  "homepage": "https://github.com/Fortune-Transportation/fortune-front-end",
-  "authors": [
-    "Fortune Transportation"
-  ],
-  "description": "Fortune Front-end",
-  "keywords": [
-    "Fortune",
-    "Transportation",
-    "front-end"
-  ],
-  "license": "MIT",
   "dependencies": {
     "angular": "angularjs#~1.4.5"
+  },
+  "install": {
+    "path": "app/lib",
+    "sources": {
+        "angular": "bower_components/angular/angular.min.js"
+    }
   }
 }
