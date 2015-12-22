@@ -56,6 +56,7 @@
     "compile_sass": "node node_modules/node-sass/bin/node-sass app/ -o tmp/css",
     "autoprefix": "node node_modules/postcss-cli/index.js --use autoprefixer tmp/css/*.css -d tmp/css",
     "uglify_css": "node scripts/uglify-css.js tmp/app.min.css tmp/css/*.css ",
-    "checksum_css": "node scripts/checksum.js tmp/app.min.css"
+    "checksum_css": "node scripts/checksum.js tmp/app.min.css",
+    "inject_css": "node node_modules/front-end-dependency-inject/index.js css tmp/html/index.html tmp/html/index.html tmp *.min.css"
   }
 }
