@@ -64,6 +64,7 @@
     "test": "npm run unit_tests && npm run e2e_tests",
     "cp": "node scripts/glob-cp.js",
     "mv": "node scripts/glob-mv.js",
+    "rm": "node scripts/rm.js",
     "compile:jade": "node node_modules/jade/bin/jade tmp/jade",
     "ng_templates": "node node_modules/ng-templatecache-convert/index.js fortuneFrontEnd **/*.html !index.html tmp/js/ngTemplates.js -c tmp/html",
     "lint:js": "node node_modules/eslint/bin/eslint.js app/*.js !app/lib/**/*",

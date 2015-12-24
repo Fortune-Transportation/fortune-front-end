@@ -38,6 +38,16 @@
         
         monitor.on("removed", (f, stat) => {
             console.log('Removed: ' + f);
+            
+            if(isJs(f) && !isSpec(f)) {
+                handleJsDelete(f);
+            } else if(isSass(f)) {
+                handleSassDelete(f);
+            } else if(isJade(f)) {
+                handleJadeDelete(f);
+            } else if(isImg(f)) {
+                handleImgDelete(f);
+            }
         });
     });
     
@@ -121,6 +131,48 @@
             adjustedHtmlPath = f.substring(4, f.length - 5) + ".html",
             adjustedPathWithoutFileName = adjustedPath.substring(0, adjustedPath.lastIndexOf("\\"));
         exec(`npm run cp -- ${f} tmp/jade/${adjustedPath} && node node_modules/jade/bin/jade tmp/jade/${adjustedPath} -o tmp/html/${adjustedPathWithoutFileName} && npm run cp -- tmp/html/${adjustedHtmlPath} dev/html/${adjustedHtmlPath}`).then(() => {
+            console.log("Success");
+        }).catch(e => {
+            console.log(e);
+        });
+    }
+    
+    function handleJsDelete(f) {
+        var adjustedPath = f.substring(4);
+        
+        exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/js/${adjustedPath}" "npm run rm -- dev/js/${adjustedPath}" && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html`).then(() => {
+            console.log("Success");
+        }).catch(e => {
+            console.log(e);
+        });
+    }
+    
+    function handleSassDelete(f) {
+        var adjustedPath = f.substring(4),
+            adjustedCssPath = f.substring(4, f.length - 5) + ".css";
+        
+        exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/sass/${adjustedPath}" "npm run rm -- tmp/css/${adjustedCssPath}" "npm run rm -- dev/css/${adjustedCssPath}" && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html`).then(() => {
+            console.log("Success");
+        }).catch(e => {
+            console.log(e);
+        });
+    }
+    
+    function handleJadeDelete(f) {
+        var adjustedPath = f.substr(4),
+            adjustedHtmlPath = f.substring(4, f.length - 5) + ".html";
+        
+        exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/jade/${adjustedPath}" "npm run rm -- tmp/html/${adjustedHtmlPath}" "npm run rm -- dev/html/${adjustedHtmlPath}"`).then(() => {
+            console.log("Success");
+        }).catch(e => {
+            console.log(e);
+        });
+    }
+    
+    function handleImgDelete(f) {
+        var adjustedPath = f.substring(4);
+        
+        exec(`npm run rm -- dev/${adjustedPath}`).then(() => {
             console.log("Success");
         }).catch(e => {
             console.log(e);
