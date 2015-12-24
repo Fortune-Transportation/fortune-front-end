@@ -91,6 +91,7 @@
     "watch": "node scripts/watch.js app",
     "serve": "http-server dev -p 8080",
     "livereload": "node node_modules/live-reload/bin/reload.js dev --port=9090",
-    "dev": "npm run build:dev && node node_modules/parallelshell/index.js \"npm run serve\" \"npm run watch\" \"npm run livereload\" \"node node_modules/opener/opener.js http://localhost:8080\""
+    "dev": "npm run build:dev && node node_modules/parallelshell/index.js \"npm run serve\" \"npm run watch\" \"npm run livereload\" \"node node_modules/opener/opener.js http://localhost:8080\"",
+    "start": "npm run dev"
   }
 }
