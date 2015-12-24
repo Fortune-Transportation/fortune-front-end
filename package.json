@@ -43,6 +43,7 @@
     "node-sass": "^3.4.2",
     "nofs": "^0.10.11",
     "onchange": "^2.0.0",
+    "opener": "^1.4.1",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.3.2",
     "protractor": "^3.0.0",
@@ -90,6 +91,6 @@
     "watch": "node scripts/watch.js app",
     "serve": "http-server dev -p 8080",
     "livereload": "node node_modules/live-reload/bin/reload.js dev --port=9090",
-    "dev": "npm run build:dev && node node_modules/parallelshell/index.js \"npm run serve\" \"npm run watch\" \"npm run livereload\""
+    "dev": "npm run build:dev && node node_modules/parallelshell/index.js \"npm run serve\" \"npm run watch\" \"npm run livereload\" \"node node_modules/opener/opener.js http://localhost:8080\""
   }
 }
