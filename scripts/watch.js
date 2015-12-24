@@ -92,7 +92,7 @@
     function handleImgEdit(f) {
         var adjustedPath = f.substring(4);
         exec(`npm run cp -- ${f} dev/${adjustedPath}`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -101,7 +101,7 @@
     function handleJsEdit(f) {
         var adjustedPath = f.substring(4);
         exec(`npm run cp -- ${f} tmp\\js\\${adjustedPath} && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && node node_modules/parallelshell/index.js "npm run cp -- tmp/html/index.html dev/index.html" "npm run cp -- tmp\\js\\${adjustedPath} dev\\js\\${adjustedPath}"`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -112,7 +112,7 @@
             adjustedCssPath = f.substring(4, f.length - 5) + ".css",
             adjustedPathWithoutFileName = adjustedPath.substring(0, adjustedPath.lastIndexOf("\\"));
         exec(`npm run cp -- ${f} tmp\\sass\\${adjustedPath} && node node_modules/node-sass/bin/node-sass tmp/sass/${adjustedPath} -o tmp/css/${adjustedPathWithoutFileName} && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && node node_modules/parallelshell/index.js "npm run cp -- tmp/html/index.html dev/index.html" "npm run cp -- tmp\\css\\${adjustedCssPath} dev\\css\\${adjustedCssPath}`).then(() => {
-           console.log("Success"); 
+           console.log("Updated Successfully"); 
         }).catch(e => {
             console.log(e);
         });
@@ -120,7 +120,7 @@
     
     function handleIndexEdit(f) {
         exec("npm run cp -- app/index.jade tmp/jade/index.jade && node node_modules/jade/bin/jade tmp/jade/index.jade && npm run mv -- tmp/jade/index.html tmp/html/index-no-dependencies.html -o && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html").then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -131,7 +131,7 @@
             adjustedHtmlPath = f.substring(4, f.length - 5) + ".html",
             adjustedPathWithoutFileName = adjustedPath.substring(0, adjustedPath.lastIndexOf("\\"));
         exec(`npm run cp -- ${f} tmp/jade/${adjustedPath} && node node_modules/jade/bin/jade tmp/jade/${adjustedPath} -o tmp/html/${adjustedPathWithoutFileName} && npm run cp -- tmp/html/${adjustedHtmlPath} dev/html/${adjustedHtmlPath}`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -141,7 +141,7 @@
         var adjustedPath = f.substring(4);
         
         exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/js/${adjustedPath}" "npm run rm -- dev/js/${adjustedPath}" && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -152,7 +152,7 @@
             adjustedCssPath = f.substring(4, f.length - 5) + ".css";
         
         exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/sass/${adjustedPath}" "npm run rm -- tmp/css/${adjustedCssPath}" "npm run rm -- dev/css/${adjustedCssPath}" && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -163,7 +163,7 @@
             adjustedHtmlPath = f.substring(4, f.length - 5) + ".html";
         
         exec(`node node_modules/parallelshell/index.js "npm run rm -- tmp/jade/${adjustedPath}" "npm run rm -- tmp/html/${adjustedHtmlPath}" "npm run rm -- dev/html/${adjustedHtmlPath}"`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
@@ -173,7 +173,7 @@
         var adjustedPath = f.substring(4);
         
         exec(`npm run rm -- dev/${adjustedPath}`).then(() => {
-            console.log("Success");
+            console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
         });
