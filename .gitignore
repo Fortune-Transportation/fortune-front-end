@@ -5,5 +5,11 @@ app/vendor
 # Temporary Directory
 tmp
 
+# Distribution Directory
+dist
+
+# Dev directory
+dev
+
 # NPM Debug
 npm-debug.log
