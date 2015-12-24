@@ -119,7 +119,7 @@
     }
     
     function handleIndexEdit(f) {
-        exec("npm run cp -- app/index.jade tmp/jade/index.jade && node node_modules/jade/bin/jade tmp/jade/index.jade && npm run mv -- tmp/jade/index.html tmp/html/index-no-dependencies.html -o && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html").then(() => {
+        exec("npm run cp -- app/index.jade tmp/jade/index.jade && node node_modules/jade/bin/jade tmp/jade/index.jade && npm run mv -- tmp/jade/index.html tmp/html/index-no-dependencies.html -o && node scripts/inject-live-reload-script.js tmp/html/index-no-dependencies.html 9090 && npm run cp -- tmp/html/index-no-dependencies.html tmp/html/index.html && npm run inject:js:dev && npm run inject:css:dev && npm run cp -- tmp/html/index.html dev/index.html").then(() => {
             console.log("Updated Successfully");
         }).catch(e => {
             console.log(e);
