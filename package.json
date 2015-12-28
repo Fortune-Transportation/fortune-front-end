@@ -24,7 +24,7 @@
     "concat-cli": "^1.0.1",
     "cpy": "^3.4.1",
     "eslint": "^1.7.1",
-    "front-end-dependency-inject": "^1.0.5",
+    "front-end-dependency-inject": "^1.0.6",
     "fs-extra": "^0.26.3",
     "fs-promise": "^0.3.1",
     "globby": "^3.0.1",
