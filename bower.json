@@ -2,12 +2,23 @@
   "name": "fortune-front-end",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "angularjs#~1.4.5"
+    "angular": "angularjs#~1.4.5",
+    "angular-material": "~1.0.1",
+    "angular-animate": "~1.4.8",
+    "angular-aria": "~1.4.8",
+    "angular-messages": "~1.4.8"
   },
   "install": {
     "path": "app/lib",
     "sources": {
-        "angular": "bower_components/angular/angular.min.js"
+      "angular": "bower_components/angular/angular.min.js",
+      "angular-material": [
+        "bower_components/angular-material/angular-material.min.js",
+        "bower_components/angular-material/angular-material.min.css"
+      ],
+      "angular-animate": "bower_components/angular-animate/angular-animate.min.js",
+      "angular-aria": "bower_components/angular-aria/angular-aria.min.js",
+      "angular-messages": "bower_components/angular-messages/angular-messages.min.js"
     }
   }
 }

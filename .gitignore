@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
-app/vendor
+app/lib
 
 # Temporary Directory
 tmp
