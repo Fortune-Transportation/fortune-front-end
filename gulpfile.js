@@ -74,6 +74,7 @@ gulp.task('protractor-install', done => {
     child_process
         .spawn('node', ['node_modules/protractor/bin/webdriver-manager', 'update'], {stdio: 'inherit'})
         .on('close', () => {
+            // Update protractor.conf.js to point to the correct selenium server jar
             fs.readdir('node_modules/protractor/selenium', (e, files) => {
                 if(e) {
                     throw e;
