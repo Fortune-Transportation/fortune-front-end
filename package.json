@@ -35,6 +35,10 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
     "open": "0.0.5"
   }
 }
