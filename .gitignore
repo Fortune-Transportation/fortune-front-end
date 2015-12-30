@@ -1,15 +1,9 @@
 # Dependencies
 node_modules
-app/vendor
-
-# Temporary Directory
-tmp
-
-# Distribution Directory
-dist
-
-# Dev directory
-dev
+bower_dependencies
 
 # NPM Debug
 npm-debug.log
+
+# Distribution Folder
+dist
