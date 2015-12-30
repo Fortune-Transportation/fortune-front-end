@@ -1,2 +1,0 @@
-//TEST
-console.log("test");
