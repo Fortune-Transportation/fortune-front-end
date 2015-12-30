@@ -9,7 +9,7 @@ module.exports = function(config) {
     exclude: [
       'app/lib/**/*'
     ],
-    reporters: ["progress"],
+    reporters: ["spec"],
     autoWatch: false,
     browsers: ['Chrome'],
     singleRun: true
