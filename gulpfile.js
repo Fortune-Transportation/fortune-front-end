@@ -72,7 +72,7 @@ gulp.task('test:unit', done => {
 
 gulp.task('protractor-install', done => {
     child_process
-        .spawn('node', ['node_modules/protractor/bin/webdriver-manager', 'update'], {stdio: 'inherit'})
+        .spawn('node', ['node_modules/protractor/bin/webdriver-manager', 'update', '--no-chrome'], {stdio: 'inherit'})
         .on('close', () => {
             // Update protractor.conf.js to point to the correct selenium server jar
             fs.readdir('node_modules/protractor/selenium', (e, files) => {
