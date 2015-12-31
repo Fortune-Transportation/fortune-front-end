@@ -1,0 +1,7 @@
+{
+  "name": "fortune-front-end",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
