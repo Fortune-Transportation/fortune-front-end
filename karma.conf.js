@@ -16,6 +16,13 @@ module.exports = function(config) {
     };
     
     if(process.env.TRAVIS) {
+        configuration.plugins = [
+            'karma-coverage',
+            'karma-jasmine',
+            'karma-firefox-launcher',
+            'karma-spec-reporter',
+            'karma-coveralls'
+        ];
         configuration.preprocessors = {
             '{app,app/!lib/**}/!(*.spec).js': 'coverage'
         };
@@ -24,12 +31,7 @@ module.exports = function(config) {
             dir: 'coverage'
         };
         configuration.reporters.push('coverage');
-        configuration.plugins = [
-            'karma-coverage',
-            'karma-jasmine',
-            'karma-firefox-launcher',
-            'karma-spec-reporter'
-        ];
+        configuration.reporters.push('coveralls');
     }
     
     config.set(configuration);
