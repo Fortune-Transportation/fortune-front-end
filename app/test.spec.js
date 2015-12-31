@@ -1,5 +1,5 @@
-describe('True', function() {
-    it('should be truthy', function() {
+describe('True', () => {
+    it('should be truthy', () => {
         expect(true).toBeTruthy();
     });
 });
