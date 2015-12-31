@@ -7,3 +7,6 @@ npm-debug.log
 
 # Distribution Folder
 dist
+
+# Code Coverage Reports
+coverage
