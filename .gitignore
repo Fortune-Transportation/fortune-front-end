@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
-bower_dependencies
+bower_components
 
 # NPM Debug
 npm-debug.log
