@@ -1,2 +1,2 @@
 # Fortune Front-end
-[![Build Status](https://travis-ci.org/Fortune-Transportation/fortune-front-end.svg)](https://travis-ci.org/Fortune-Transportation/fortune-front-end)
+[![Build Status](https://travis-ci.org/Fortune-Transportation/fortune-front-end.svg)](https://travis-ci.org/Fortune-Transportation/fortune-front-end) [![Dependency Status](https://gemnasium.com/Fortune-Transportation/fortune-front-end.svg)](https://gemnasium.com/Fortune-Transportation/fortune-front-end)
