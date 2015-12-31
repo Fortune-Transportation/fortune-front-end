@@ -1,17 +1,19 @@
 // Karma configuration
 module.exports = function(config) {
-  config.set({
-    frameworks: ['jasmine'],
-    files: [
-      'app/**/*.js',
-      'app/**/*.spec.js'
-    ],
-    exclude: [
-      'app/lib/**/*'
-    ],
-    reporters: ["spec"],
-    autoWatch: false,
-    browsers: ['Chrome'],
-    singleRun: true
-  });
+    var configuration = {
+        frameworks: ['jasmine'],
+        files: [
+            'app/**/*.js',
+            'app/**/*.spec.js'
+        ],
+        exclude: [
+            'app/lib/**/*'
+        ],
+        reporters: ["spec"],
+        autoWatch: false,
+        singleRun: true,
+        browsers: ['Firefox']
+    };
+    
+    config.set(configuration);
 }
