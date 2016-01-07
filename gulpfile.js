@@ -16,7 +16,7 @@ gulp.task('build', ['clean'], () => {
         jadeFilter = $.filter('**/*.jade', {restore:true}),
         scssFilter = $.filter('**/*.scss', {restore:true}),
         injectFilter = $.filter(['**/*.css', '**/*.js', '**/index.html', '!**/*.map'], {restore:true}),
-        excludeSpecFilter = $.filter('!**/*.spec.js');
+        excludeSpecFilter = $.filter(['**', '!**/*.spec.js']);
     
     return gulp.src('app/**/*')
         .pipe(excludeSpecFilter)
